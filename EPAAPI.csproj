@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F2159389-97D3-491C-84AC-01AE42AAF7AE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EPAAPI</RootNamespace>
+    <AssemblyName>EPAAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44317</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApplyCar.cs" />
+    <Compile Include="Models\ApplyCarDetail.cs" />
+    <Compile Include="Models\ApplyCarHandlingSituation.cs" />
+    <Compile Include="Models\ApplyCarType.cs" />
+    <Compile Include="Models\ApplyDisinfectionEquipment.cs" />
+    <Compile Include="Models\ApplyDisinfectionEquipmentDetail.cs" />
+    <Compile Include="Models\ApplyDisinfectionEquipmentHandlingSituation.cs" />
+    <Compile Include="Models\ApplyDrug.cs" />
+    <Compile Include="Models\ApplyHandlingSituation.cs" />
+    <Compile Include="Models\ApplyMedicine.cs" />
+    <Compile Include="Models\ApplyMedicineDetail.cs" />
+    <Compile Include="Models\ApplyMedicineHandlingSituation.cs" />
+    <Compile Include="Models\ApplyOther.cs" />
+    <Compile Include="Models\ApplyOtherDetail.cs" />
+    <Compile Include="Models\ApplyOtherSubsidy.cs" />
+    <Compile Include="Models\ApplyPeople.cs" />
+    <Compile Include="Models\ApplyPeopleHandlingSituation.cs" />
+    <Compile Include="Models\ApplySubsidy.cs" />
+    <Compile Include="Models\ApplySubsidyDetail.cs" />
+    <Compile Include="Models\ApplySubsidyType.cs" />
+    <Compile Include="Models\ApplySubsidyTypeDetail.cs" />
+    <Compile Include="Models\Area.cs" />
+    <Compile Include="Models\BASIC_DATA.cs" />
+    <Compile Include="Models\CAR_EQUIP.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\ConfirmTime.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Contactmanual.cs" />
+    <Compile Include="Models\ContactManualDate.cs" />
+    <Compile Include="Models\ContactManualDepartment.cs" />
+    <Compile Include="Models\ContactManualDepartment20221222.cs" />
+    <Compile Include="Models\ContactManualDownloadRecord.cs" />
+    <Compile Include="Models\ContactManualOld_.cs" />
+    <Compile Include="Models\ContactManualRole.cs" />
+    <Compile Include="Models\ContactManualRole20221221.cs" />
+    <Compile Include="Models\ContactManualRoleBak.cs" />
+    <Compile Include="Models\ContactManualRole_.cs" />
+    <Compile Include="Models\ContactManualSupervise.cs" />
+    <Compile Include="Models\ContactManual_.cs" />
+    <Compile Include="Models\ContactManulTYpe.cs" />
+    <Compile Include="Models\ContactManulTYpe20221222.cs" />
+    <Compile Include="Models\Damage.cs" />
+    <Compile Include="Models\DamageMain.cs" />
+    <Compile Include="Models\ddibak.cs" />
+    <Compile Include="Models\ddi_.cs" />
+    <Compile Include="Models\ddi_all_.cs" />
+    <Compile Include="Models\ddt.cs" />
+    <Compile Include="Models\ddtbak.cs" />
+    <Compile Include="Models\ddt_.cs" />
+    <Compile Include="Models\Defend.cs" />
+    <Compile Include="Models\DefendDutyQuestion.cs" />
+    <Compile Include="Models\DefendQuestion.cs" />
+    <Compile Include="Models\DefendQuestion_bak.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Department20221222.cs" />
+    <Compile Include="Models\Diaster.cs" />
+    <Compile Include="Models\Diaster_BAK.cs" />
+    <Compile Include="Models\Disinfectant.cs" />
+    <Compile Include="Models\Disinfectant_1110.cs" />
+    <Compile Include="Models\Disinfector.cs" />
+    <Compile Include="Models\Disinfectorbak.cs" />
+    <Compile Include="Models\District.cs" />
+    <Compile Include="Models\District_bak.cs" />
+    <Compile Include="Models\DRINK_DETAIL.cs" />
+    <Compile Include="Models\DRINK_NO.cs" />
+    <Compile Include="Models\DRINK_SECOND.cs" />
+    <Compile Include="Models\Dump.cs" />
+    <Compile Include="Models\Duty.cs" />
+    <Compile Include="Models\Emis.cs" />
+    <Compile Include="Models\FileData.cs" />
+    <Compile Include="Models\FileUpload.cs" />
+    <Compile Include="Models\FileUploadLevel.cs" />
+    <Compile Include="Models\GIS_dwdftwell.cs" />
+    <Compile Include="Models\GIS_dwintake.cs" />
+    <Compile Include="Models\GIS_dwswtf.cs" />
+    <Compile Include="Models\GIS_dwwtp.cs" />
+    <Compile Include="Models\GIS_eetown.cs" />
+    <Compile Include="Models\Incinerator.cs" />
+    <Compile Include="Models\Incinerator_OLD.cs" />
+    <Compile Include="Models\InfectiousDisease.cs" />
+    <Compile Include="Models\Landfill.cs" />
+    <Compile Include="Models\Landfill_OLD.cs" />
+    <Compile Include="Models\Mail.cs" />
+    <Compile Include="Models\MainShiftSchedule.cs" />
+    <Compile Include="Models\MainShiftScheduleUser.cs" />
+    <Compile Include="Models\Meeting_Sign.cs" />
+    <Compile Include="Models\Meeting_Sign_Detail.cs" />
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\MutualSupport.cs" />
+    <Compile Include="Models\NewestCountValue.cs" />
+    <Compile Include="Models\NewestUpdateTime.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\Notice.cs" />
+    <Compile Include="Models\OpenContract.cs" />
+    <Compile Include="Models\OpenContractDetail.cs" />
+    <Compile Include="Models\OpenContractDetailItemCategory.cs" />
+    <Compile Include="Models\Pest.cs" />
+    <Compile Include="Models\PhoneWork.cs" />
+    <Compile Include="Models\PhoneWork_1.cs" />
+    <Compile Include="Models\Polymer.cs" />
+    <Compile Include="Models\PolymerDetail.cs" />
+    <Compile Include="Models\Position.cs" />
+    <Compile Include="Models\Position20221223.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Registers.cs" />
+    <Compile Include="Models\ResourceType.cs" />
+    <Compile Include="Models\SendTextLog.cs" />
+    <Compile Include="Models\SendTextLogDetail.cs" />
+    <Compile Include="Models\ShiftSchedule.cs" />
+    <Compile Include="Models\ShiftScheduleUser.cs" />
+    <Compile Include="Models\SUPPORT_CASH.cs" />
+    <Compile Include="Models\SUPPORT_HISTORY.cs" />
+    <Compile Include="Models\SUPPORT_MAIN.cs" />
+    <Compile Include="Models\SUPPORT_MAIN_BK.cs" />
+    <Compile Include="Models\SUP_CAR.cs" />
+    <Compile Include="Models\SUP_CAR_LIST.cs" />
+    <Compile Include="Models\SUP_Check_List.cs" />
+    <Compile Include="Models\SUP_DRUG.cs" />
+    <Compile Include="Models\SUP_DRUG_LIST.cs" />
+    <Compile Include="Models\SUP_EQUIP.cs" />
+    <Compile Include="Models\SUP_EQUIP_LIST.cs" />
+    <Compile Include="Models\SUP_MAN.cs" />
+    <Compile Include="Models\SUP_MONEY.cs" />
+    <Compile Include="Models\SUP_MONEY_LIST_EPA.cs" />
+    <Compile Include="Models\SUP_MONEY_LIST_EQ.cs" />
+    <Compile Include="Models\SUP_MONEY_LIST_ME.cs" />
+    <Compile Include="Models\SUP_MONEY_LIST_MI.cs" />
+    <Compile Include="Models\SUP_MONEY_LIST_OT.cs" />
+    <Compile Include="Models\SUP_MONEY_LIST_TO.cs" />
+    <Compile Include="Models\SUP_MONEY_LIST_WO.cs" />
+    <Compile Include="Models\SUP_OTHER.cs" />
+    <Compile Include="Models\SUP_OTHER_LIST.cs" />
+    <Compile Include="Models\SystemConfigSetting.cs" />
+    <Compile Include="Models\TaskWork.cs" />
+    <Compile Include="Models\TaskWork_1.cs" />
+    <Compile Include="Models\TeamShiftSchedule.cs" />
+    <Compile Include="Models\TeamShiftScheduleUser.cs" />
+    <Compile Include="Models\Text.cs" />
+    <Compile Include="Models\Toilet.cs" />
+    <Compile Include="Models\ToiletCleaningLog.cs" />
+    <Compile Include="Models\ToiletLocation.cs" />
+    <Compile Include="Models\Town.cs" />
+    <Compile Include="Models\TRASH_BURN.cs" />
+    <Compile Include="Models\TRASH_BURY.cs" />
+    <Compile Include="Models\TREATMENT.cs" />
+    <Compile Include="Models\UserArea.cs" />
+    <Compile Include="Models\UserGroup.cs" />
+    <Compile Include="Models\UserGroupMapp.cs" />
+    <Compile Include="Models\UserLoginLog.cs" />
+    <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\Usersbak.cs" />
+    <Compile Include="Models\Usersbak_Important.cs" />
+    <Compile Include="Models\Usersbak_Important_bak_.cs" />
+    <Compile Include="Models\UsersNew.cs" />
+    <Compile Include="Models\Users_.cs" />
+    <Compile Include="Models\Users_problem.cs" />
+    <Compile Include="Models\Users___old.cs" />
+    <Compile Include="Models\USER_DATA.cs" />
+    <Compile Include="Models\USER_LEV.cs" />
+    <Compile Include="Models\USER_SELECT_LIST.cs" />
+    <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Models\VehicleType.cs" />
+    <Compile Include="Models\Vehicle_0822.cs" />
+    <Compile Include="Models\Vehicle_0902.cs" />
+    <Compile Include="Models\Vehicle_1014.cs" />
+    <Compile Include="Models\Vehicle_1100208.cs" />
+    <Compile Include="Models\Vehicle_1100503.cs" />
+    <Compile Include="Models\Vehicle_bak.cs" />
+    <Compile Include="Models\Vehicle_Insert.cs" />
+    <Compile Include="Models\Vehicle_OtherReady.cs" />
+    <Compile Include="Models\VihicleAdd_.cs" />
+    <Compile Include="Models\Volunteer.cs" />
+    <Compile Include="Models\vvtbak.cs" />
+    <Compile Include="Models\vvv.cs" />
+    <Compile Include="Models\WaterCheck.cs" />
+    <Compile Include="Models\WaterCheckDetail.cs" />
+    <Compile Include="Models\WaterDivision.cs" />
+    <Compile Include="Models\WaterEquipment.cs" />
+    <Compile Include="Models\Water_Equipment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Server.XML" />
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58687</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44317/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
