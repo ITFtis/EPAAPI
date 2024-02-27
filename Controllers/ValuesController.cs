@@ -492,7 +492,7 @@ namespace EPAAPI.Controllers
                                          MobilePhone = a.MobilePhone,
                                          Name = a.Name,
                                          OfficePhone = a.OfficePhone,
-
+                                         Duty = a.Duty,
                                      }).ToList();
                 if (result.Count() == 0)
                 {
@@ -786,7 +786,7 @@ namespace EPAAPI.Controllers
         public string MobilePhone { get; set; }
         public string OfficePhone { get; set; }
         public string Email { get; set; }
-
+        public string Duty { get; set; }
     }
 
 
