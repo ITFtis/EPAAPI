@@ -218,8 +218,8 @@ namespace EPAAPI.Controllers
                              {
                                  City = g.Key,
                                  ALL= g.Count(),
-                                 USE = g.Count(v => v.VehicleState == "使用中"),
-                                 NOTUSE = g.Count(v => v.VehicleState != "使用中")
+                                 USE = g.Count(v => v.VehicleState != null && v.VehicleState.Trim() == "使用中"),
+                                 NOTUSE = g.Count(v => v.VehicleState == null || v.VehicleState.Trim() != "使用中")
                              })).ToList();
 
 
@@ -228,8 +228,8 @@ namespace EPAAPI.Controllers
             {
                 City = "Taiwan",
                 ALL = db.Vehicle.Count(),
-                USE = db.Vehicle.Count(v => v.VehicleState == "使用中"),
-                NOTUSE = db.Vehicle.Count(v => v.VehicleState != "使用中")
+                USE = db.Vehicle.Count(v => v.VehicleState != null && v.VehicleState.Trim() == "使用中"),
+                NOTUSE = db.Vehicle.Count(v => v.VehicleState == null || v.VehicleState.Trim() != "使用中")
             };
 
 
