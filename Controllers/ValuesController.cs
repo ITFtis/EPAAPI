@@ -370,31 +370,30 @@ namespace EPAAPI.Controllers
         [SwaggerResponse(HttpStatusCode.OK, "成功", typeof(DisinfectantCount))]
         public HttpResponseMessage DisinfectantCount()
         {
-            List<DisinfectantCount> result = (db.Disinfectant.GroupBy(d => d.City)
-                                  .Select(g => new DisinfectantCount()
-                                  {
-                                      City = g.Key,
-                                      ALL = g.Where(v => v.Amount.HasValue).Count() == 0 ? 0 : g.Where(v => v.Amount.HasValue).Sum(v => v.Amount.Value),
-                                      disinfection = g.Where(v => v.UseType == 1 && v.Amount.HasValue).Count() == 0 ? 0 : g.Where(v => v.UseType == 1 && v.Amount.HasValue).Sum(v => v.Amount.Value),
-                                      dengue = g.Where(v => v.UseType == 2 && v.Amount.HasValue).Count() == 0 ? 0 : g.Where(v => v.UseType == 2 && v.Amount.HasValue).Sum(v => v.Amount.Value),
-                                      Fir_ants = g.Where(v => v.UseType == 3 && v.Amount.HasValue).Count() == 0 ? 0 : g.Where(v => v.UseType ==3 && v.Amount.HasValue).Sum(v => v.Amount.Value),
-                                      Tessaratoma_papillosa = g.Where(v => v.UseType == 4 && v.Amount.HasValue).Count() == 0 ? 0 : g.Where(v => v.UseType ==4 && v.Amount.HasValue).Sum(v => v.Amount.Value),
-                                      other = g.Where(v => v.UseType == 5 && v.Amount.HasValue).Count() == 0 ? 0 : g.Where(v => v.UseType == 5 && v.Amount.HasValue).Sum(v => v.Amount.Value),
-                                  })).ToList();
+            var tmp = db.Disinfectant.Where(a => !string.IsNullOrEmpty(a.City) && a.City != "環保署");
 
+            List<DisinfectantCount> result = (tmp.GroupBy(d => d.City)
+                      .Select(g => new DisinfectantCount()
+                      {
+                          City = g.Key,
+                          ALL = g.Where(v => v.Amount.HasValue).Count() == 0 ? 0 : g.Where(v => v.Amount.HasValue).Sum(v => v.Amount.Value),
+                          disinfection = g.Where(v => v.UseType == 1 && v.Amount.HasValue).Count() == 0 ? 0 : g.Where(v => v.UseType == 1 && v.Amount.HasValue).Sum(v => v.Amount.Value),
+                          dengue = g.Where(v => v.UseType == 2 && v.Amount.HasValue).Count() == 0 ? 0 : g.Where(v => v.UseType == 2 && v.Amount.HasValue).Sum(v => v.Amount.Value),
+                          Fir_ants = g.Where(v => v.UseType == 3 && v.Amount.HasValue).Count() == 0 ? 0 : g.Where(v => v.UseType == 3 && v.Amount.HasValue).Sum(v => v.Amount.Value),
+                          Tessaratoma_papillosa = g.Where(v => v.UseType == 4 && v.Amount.HasValue).Count() == 0 ? 0 : g.Where(v => v.UseType == 4 && v.Amount.HasValue).Sum(v => v.Amount.Value),
+                          other = g.Where(v => v.UseType == 5 && v.Amount.HasValue).Count() == 0 ? 0 : g.Where(v => v.UseType == 5 && v.Amount.HasValue).Sum(v => v.Amount.Value),
+                      })).ToList();
 
-  
             DisinfectantCount ALLresult = new DisinfectantCount
             {
                 City = "Taiwan",
-                ALL = db.Disinfectant.Where(v => v.Amount.HasValue).Count() == 0 ? 0 : db.Disinfectant.Where(v => v.Amount.HasValue).Sum(v => v.Amount.Value),
-                disinfection = db.Disinfectant.Where(v => v.UseType == 1 && v.Amount.HasValue).Count() == 0 ? 0 : db.Disinfectant.Where(v => v.UseType == 1 && v.Amount.HasValue).Sum(v => v.Amount.Value),
-                dengue = db.Disinfectant.Where(v => v.UseType == 2 && v.Amount.HasValue).Count() == 0 ? 0 : db.Disinfectant.Where(v => v.UseType == 2 && v.Amount.HasValue).Sum(v => v.Amount.Value),
-                Fir_ants = db.Disinfectant.Where(v => v.UseType == 3 && v.Amount.HasValue).Count() == 0 ? 0 : db.Disinfectant.Where(v => v.UseType == 3 && v.Amount.HasValue).Sum(v => v.Amount.Value),
-                Tessaratoma_papillosa = db.Disinfectant.Where(v => v.UseType == 4 && v.Amount.HasValue).Count() == 0 ? 0 : db.Disinfectant.Where(v => v.UseType == 4 && v.Amount.HasValue).Sum(v => v.Amount.Value),
-                other = db.Disinfectant.Where(v => v.UseType == 5 && v.Amount.HasValue).Count() == 0 ? 0 : db.Disinfectant.Where(v => v.UseType == 5 && v.Amount.HasValue).Sum(v => v.Amount.Value),
+                ALL = tmp.Where(v => v.Amount.HasValue).Count() == 0 ? 0 : tmp.Where(v => v.Amount.HasValue).Sum(v => v.Amount.Value),
+                disinfection = tmp.Where(v => v.UseType == 1 && v.Amount.HasValue).Count() == 0 ? 0 : tmp.Where(v => v.UseType == 1 && v.Amount.HasValue).Sum(v => v.Amount.Value),
+                dengue = tmp.Where(v => v.UseType == 2 && v.Amount.HasValue).Count() == 0 ? 0 : tmp.Where(v => v.UseType == 2 && v.Amount.HasValue).Sum(v => v.Amount.Value),
+                Fir_ants = tmp.Where(v => v.UseType == 3 && v.Amount.HasValue).Count() == 0 ? 0 : tmp.Where(v => v.UseType == 3 && v.Amount.HasValue).Sum(v => v.Amount.Value),
+                Tessaratoma_papillosa = tmp.Where(v => v.UseType == 4 && v.Amount.HasValue).Count() == 0 ? 0 : tmp.Where(v => v.UseType == 4 && v.Amount.HasValue).Sum(v => v.Amount.Value),
+                other = tmp.Where(v => v.UseType == 5 && v.Amount.HasValue).Count() == 0 ? 0 : tmp.Where(v => v.UseType == 5 && v.Amount.HasValue).Sum(v => v.Amount.Value),
             };
-
 
             result.Add(ALLresult);
 
